@@ -1,0 +1,25 @@
+<head>
+  <title>debate</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hi {{usr}} This house believes that XYZ</h1>
+
+  <h2>{{agree}} Agree, {{neutral}} on the fence and {{disagree}} disagree</h2>
+
+  <form>
+<input type="radio" name="dya" value="agree" checked>Agree
+<br>
+<input type="radio" name="dya" value="neutral">Neutral
+<br>
+<input type="radio" name="dya" value="disagree">Disagree
+</form>
+
+  <div class='ct-chart ct-square'></div>
+</template>
