@@ -1,5 +1,89 @@
 /* CSS declarations go here */
+*{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+}
+html{
+  background-image: url("background.jpg");
+}
+#cmmtBox{
+  display:block;
+  margin-bottom:30px;
+}
+
+.comment{
+  display:inline-block;
+  float:both;
+  background-color:white;
+  padding:25px;
+  width:220px;
+  min-height:120px;
+  margin-top:25px;
+}
+.agree{
+  background-color:#E08E79;
+}
+.neutral{
+  background-color:#556270;
+}
+.disagree{
+  background-color:#79BD9A;
+}
+
+.ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill:#E08E79;
+
+}
+.ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut){
+  fill:#556270;
+}
+
+.ct-chart .ct-series.ct-series-c .ct-area, .ct-chart .ct-series.ct-series-c .ct-slice:not(.ct-donut){
+  fill:#79BD9A;
+}
+
+
+paper-tab::shadow #ink {
+  color: #ff4081;
+}
+
+paper-tabs::shadow #selectionBar {
+  background-color: #ff4081;
+}
+paper-tabs {
+  margin-top:50px;
+  margin-bottom:50px;
+}
 .ct-chart .ct-label{
-  max-width:50%;
-  font-size:6.75em;
+  /*max-width:50%;*/
+  font-size:1.75em;
+}
+.instructions{
+  display:block;
+  margin:0 auto;
+  width:40%;
+  text-align:center;
+}
+.chart-container{
+  text-align:center;
+  display:block;
+  margin:0 auto;
+  width:20%;
+  display:none;
+}
+#title{
+
+  font-size:3em;
+  max-width:60%;
+  margin: 0 auto;
+  margin-top:20px;
+  text-align:center;
+  background-color:white;
+}
+.scores{
+  float:both;
+  display:inline-block;
+  margin-top:50px;
+  width:30%;
+  text-align:center;
 }

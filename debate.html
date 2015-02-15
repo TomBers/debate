@@ -1,25 +1,32 @@
 <head>
+
   <title>debate</title>
+  <link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+  <link rel="import" href="/bower_components/core-input/core-input.html">
+  <link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
   {{> hello}}
+  {{> comment}}
 </body>
 
 <template name="hello">
-  <h1>Hi {{usr}} This house believes that XYZ</h1>
+  <paper-shadow class="card" id="title" z="2">
+    This House believes university education should be free
+    </paper-shadow>
+    <paper-tabs>
+      <paper-tab id='agree'><h1>{{agree}}</h1>Agree</paper-tab>
+      <paper-tab id='neutral'><h1>{{neutral}}</h1>Neutral</paper-tab>
+      <paper-tab id='disagree'><h1>{{disagree}}</h1>Disagree</paper-tab>
+    </paper-tabs>
 
-  <h2>{{agree}} Agree, {{neutral}} on the fence and {{disagree}} disagree</h2>
-
-  <form>
-<input type="radio" name="dya" value="agree" checked>Agree
-<br>
-<input type="radio" name="dya" value="neutral">Neutral
-<br>
-<input type="radio" name="dya" value="disagree">Disagree
-</form>
-
+    <div class='instructions'>
+      <h2>Click Above to register your opinion</h2><p>This can be changed at any time</p>
+    </div>
+<div class='chart-container'>
   <div class='ct-chart ct-square'></div>
+  <h2>Total : {{total}}</h2>
+</div>
 </template>
