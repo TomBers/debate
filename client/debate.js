@@ -88,7 +88,7 @@ Template.hello.rendered = function(){
 
   Template.comment.helpers({
     comments: function(){
-      return Comments.find({debate:Session.get('debate')});
+      return Comments.find({debate:Session.get('debate')},{sort: {DateTime:-1}});
     }
   });
 
