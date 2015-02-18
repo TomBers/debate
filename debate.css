@@ -7,13 +7,23 @@ html{
   background-image: url("background.jpg");
 }
 #cmmtBox{
+
+  max-width:650px;
   display:block;
   margin-bottom:30px;
+  clear:both;
+  margin:0 auto;
+  font-size:1.7em;
+}
+#cmmtCont{
+  margin:0 auto;
+  max-width:960px;
 }
 
 .comment{
   display:inline-block;
   float:both;
+  font-size:1.2em;
   background-color:white;
   padding:25px;
   width:220px;
@@ -42,17 +52,36 @@ html{
   fill:#79BD9A;
 }
 
+#graph{
+  float:left;
+  width:75%;
+}
+#key{
+  float:right;
+  width:20%;
+}
+
+.key{
+  margin-top:10px;
+  display:block;
+  float:both;
+  padding:10px;
+  font-size:1.5em;
+}
 
 paper-tab::shadow #ink {
-  color: #ff4081;
+  /*color: #ff4081;*/
 }
 
 paper-tabs::shadow #selectionBar {
-  background-color: #ff4081;
+  /*background-color: #ff4081;*/
 }
 paper-tabs {
-  margin-top:50px;
+  margin-top:20px;
   margin-bottom:50px;
+}
+.ct-chart.ct-square{
+  min-width:250px;
 }
 .ct-chart .ct-label{
   /*max-width:50%;*/
@@ -66,15 +95,15 @@ paper-tabs {
 }
 .chart-container{
   text-align:center;
+  max-width:550px;
   display:block;
   margin:0 auto;
-  width:20%;
   display:none;
 }
 #title{
 
   font-size:3em;
-  max-width:60%;
+  max-width:700px;
   margin: 0 auto;
   margin-top:20px;
   text-align:center;
@@ -86,4 +115,12 @@ paper-tabs {
   margin-top:50px;
   width:30%;
   text-align:center;
+}
+@media all and (max-width: 450px){
+  #key{
+    font-size:.6em;
+  }
+  #title{
+    font-size:1.5em;
+  }
 }

@@ -31,6 +31,26 @@ if (Meteor.isClient) {
 
     });
 
+    $('paper-tab').on('down', function(evt){
+      // alert('clicked');
+      // console.log(evt);
+      $('.instructions').hide();
+      $('.chart-container').show();
+      Session.set('side',evt.currentTarget.id)
+      Meteor.call('vote',Session.get('usr'),evt.currentTarget.id);
+    });
+
+    $('core-icon-button').on('click', function(evt){
+      var com = $('.the_item').val();
+      if(com != ''){
+           Meteor.call('comment',Session.get('usr'),Session.get('side'),com);
+         }
+           $('.the_item').val('');
+    });
+
+
+
+
   });
 
 
@@ -62,11 +82,14 @@ if (Meteor.isClient) {
     }
   });
 
+
+
+
   Template.comment.events({
     'click core-icon-button': function(e){
-      var com = $('.the_item').val();
-      Meteor.call('comment',Session.get('usr'),Session.get('side'),com);
-      $('.the_item').val('');
+      // var com = $('.the_item').val();
+      // Meteor.call('comment',Session.get('usr'),Session.get('side'),com);
+      // $('.the_item').val('');
     // console.log(e);
   },
   'keypress input': function(e){
@@ -78,14 +101,15 @@ if (Meteor.isClient) {
 }
   });
 
-  Template.hello.events({
-    'click paper-tab': function(evt){
-      $('.instructions').hide();
-      $('.chart-container').show();
-      Session.set('side',evt.currentTarget.id)
-      Meteor.call('vote',Session.get('usr'),evt.currentTarget.id);
-      // console.log(evt.currentTarget.id);
-    }
-
-  });
+  // Template.hello.events({
+  //   'click paper-tab': function(evt){
+  //     alert('Clcked');
+  //     // $('.instructions').hide();
+  //     // $('.chart-container').show();
+  //     // Session.set('side',evt.currentTarget.id)
+  //     // Meteor.call('vote',Session.get('usr'),evt.currentTarget.id);
+  //     // console.log(evt.currentTarget.id);
+  //   }
+  //
+  // });
 }

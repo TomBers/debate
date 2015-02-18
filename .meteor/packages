@@ -8,6 +8,6 @@ meteor-platform
 autopublish
 insecure
 mfpierre:chartist-js
-ecwyne:polymer
 ecwyne:polymer-elements
 jquery
+iron:router
