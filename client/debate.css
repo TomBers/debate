@@ -31,26 +31,25 @@ html{
   margin-top:25px;
 }
 .agree{
-  background-color:#E08E79;
+  background-color:#f15c51;
 }
 .neutral{
-  background-color:#556270;
+  background-color:#ffffff;
 }
 .disagree{
-  background-color:#79BD9A;
+  background-color:#354353;
 }
 
-.ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-  fill:#E08E79;
+.ct-chart .ct-series.ct-series-a .ct-slice.ct-donut{
+  stroke:#f15c51;
+}
+.ct-chart .ct-series.ct-series-b .ct-slice.ct-donut{
+  stroke:#ffffff;
+}
+.ct-chart .ct-series.ct-series-c .ct-slice.ct-donut{
+  stroke:#354353;
+}
 
-}
-.ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut){
-  fill:#556270;
-}
-
-.ct-chart .ct-series.ct-series-c .ct-area, .ct-chart .ct-series.ct-series-c .ct-slice:not(.ct-donut){
-  fill:#79BD9A;
-}
 
 #graph{
   float:left;
@@ -100,15 +99,16 @@ paper-tabs {
   margin:0 auto;
   display:none;
 }
-#title{
-
+.title,#debatetitle,#bgimg{
   font-size:3em;
   max-width:700px;
   margin: 0 auto;
   margin-top:20px;
   text-align:center;
   background-color:white;
+  display:block;
 }
+
 .scores{
   float:both;
   display:inline-block;

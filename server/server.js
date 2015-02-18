@@ -1,8 +1,12 @@
 Meteor.methods({
-  vote: function(usr,val) {
-    Votes.update({usr:usr},{usr:usr,val:val},{upsert:true});
+  vote: function(debate,usr,val) {
+    Votes.update({debate:debate,usr:usr},{debate:debate,usr:usr,val:val},{upsert:true});
   },
-  comment: function(usr,side,comment){
-    Comments.insert({usr:usr,side:side,comment:comment});
+  comment: function(debate,usr,side,comment){
+    Comments.insert({debate:debate,usr:usr,side:side,comment:comment});
+  },
+  makeDebate: function(title,ac,nc,dc,url){
+    return Debates.insert({title:title,ac:ac,nc:nc,dc:dc,url:url});
+
   }
 });

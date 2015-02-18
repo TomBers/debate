@@ -1,0 +1,21 @@
+<template name="home">
+  <head>
+    <title>DYA Debate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="import" href="/bower_components/core-input/core-input.html">
+  </head>
+
+<body>
+<h1>Welcome to DYA debate.</h1>
+<h2>Create A debate :</h2>
+<div id='debateLink'>Debate URL : <a href="{{debate}}" target="_blank">Here</a></div>
+
+<input type="text" is="core-input" placeholder="Debate Question" aria-label="Debate"  id="debatetitle">
+<input type='text' class="full" id="agreeCol"/>
+<input type='text' class="full" id="neutralCol"/>
+<input type='text' class="full" id="disagreeCol"/>
+<input type="text" is="core-input" placeholder="Background Image URL" aria-label="Image" id="bgimg">
+
+<button type="button" id="make">Make Debate</button>
+</body>
+</template>

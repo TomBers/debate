@@ -1,0 +1,73 @@
+<template name="debate">
+  <head>
+    <title>DYA Debate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+    <link rel="import" href="/bower_components/core-input/core-input.html">
+    <link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+
+
+  </head>
+
+  <body>
+    {{> hello}}
+    {{> comment}}
+  </body>
+</template>
+
+
+
+<template name="hello">
+  <paper-shadow class="card title"  z="2">
+    <style>
+    .agree{
+      background-color:{{ac}};
+    }
+    .neutral{
+      background-color:{{nc}};
+    }
+    .disagree{
+      background-color:{{dc}};
+    }
+    .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut{
+      stroke:{{ac}};
+    }
+    .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut{
+      stroke:{{nc}};
+    }
+    .ct-chart .ct-series.ct-series-c .ct-slice.ct-donut{
+      stroke:{{dc}};
+    }
+    html{
+      {{#if url}}
+      background-image: url("{{url}}");
+      {{/if}}
+    }
+    </style>
+    {{title}}
+  </paper-shadow>
+  <paper-tabs>
+    <paper-tab id='agree'><h2>Agree</h2></paper-tab>
+    <paper-tab id='neutral'><h2>Neutral</h2></paper-tab>
+    <paper-tab id='disagree'><h2>Disagree</h2></paper-tab>
+  </paper-tabs>
+
+  <div class='instructions'>
+    <h2>Click Above to register your opinion</h2><p>This can be changed at any time</p>
+  </div>
+  <div class='chart-container'>
+    <div id='graph'>
+      <div class='ct-chart ct-square'></div>
+    </div>
+    <div id='key'>
+      <div class='key agree' >{{agree}} <br>Agree</div>
+      <div class='key neutral'>{{neutral}} Neutral</div>
+      <div class='key disagree'>{{disagree}} Disagree</div>
+      <h2>Total : {{total}}</h2>
+    </div>
+  </div>
+
+
+
+</template>
