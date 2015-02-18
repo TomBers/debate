@@ -3,19 +3,7 @@ Session.setDefault('agreeCol','#f15c51');
 Session.setDefault('neutralCol','#ffffff');
 Session.setDefault('disagreeCol','#354353');
 
-Template.home.events({
-    'click button': function(e){
-      Meteor.call('makeDebate'
-      ,$('#debatetitle').val()
-      ,Session.get('agreeCol')
-      ,Session.get('neutralCol')
-      ,Session.get('disagreeCol')
-      ,$('#bgimg').val()
-      ,function(error,data){
-        Session.set('debate',data);
-      })
-  }
-  });
+
 
   Template.home.helpers({
     debate: function(){
@@ -25,8 +13,20 @@ Template.home.events({
 
 Template.home.rendered = function(){
 
+  $('#make').on('click', function(evt){
+    Meteor.call('makeDebate'
+    ,$('#debatetitle').val()
+    ,Session.get('agreeCol')
+    ,Session.get('neutralCol')
+    ,Session.get('disagreeCol')
+    ,$('#bgimg').val()
+    ,function(error,data){
+      Session.set('debate',data);
+    })
+  });
+
   $(".full").spectrum({
-    color: "#ECC",
+    // color: "#ECC",
     showInput: true,
     className: "full-spectrum",
     showInitial: true,

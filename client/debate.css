@@ -6,6 +6,12 @@
 html{
   background-image: url("background.jpg");
 }
+[drawer]{
+  font-color:black;
+  background-color: #fff;
+}
+
+
 #cmmtBox{
 
   max-width:650px;
@@ -68,6 +74,13 @@ html{
   font-size:1.5em;
 }
 
+paper-tabs, core-toolbar{
+  background-color:#00bcd4;
+}
+paper-tabs::shadow{
+  background-color:#ffffff;
+}
+
 paper-tab::shadow #ink {
   /*color: #ff4081;*/
 }
@@ -101,7 +114,7 @@ paper-tabs {
 }
 .title,#debatetitle,#bgimg{
   font-size:3em;
-  max-width:700px;
+  max-width:100%;
   margin: 0 auto;
   margin-top:20px;
   text-align:center;
@@ -116,6 +129,30 @@ paper-tabs {
   width:30%;
   text-align:center;
 }
+#debateLink{
+  font-size:1.5em;
+  margin:0 auto;
+  text-align:center;
+}
+#make{
+  width:175px;
+  height:45px;
+  margin:0 auto;
+  margin-top:50px;
+  display:block;
+  font-size:1.5em;
+}
+
+.menu{
+  background-color:white;
+}
+
+.colSel{
+  margin:0 auto;
+  text-align:center;
+  margin-top:20px;
+}
+
 @media all and (max-width: 450px){
   #key{
     font-size:.6em;

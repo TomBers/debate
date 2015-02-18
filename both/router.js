@@ -1,7 +1,11 @@
 Router.map(function() {
 this.route('/', {
     path: '/',
-    template: 'home'
+    template: 'home',
+    data: function () {
+    templateData = { debates: Debates.find() };
+    return templateData;
+  }
    });
    this.route('debates', {
      path: '/:_id',

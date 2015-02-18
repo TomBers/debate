@@ -2,20 +2,50 @@
   <head>
     <title>DYA Debate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="import" href="/bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="/bower_components/core-menu/core-menu.html">
+    <link rel="import" href="/bower_components/core-item/core-item.html">
+    <link rel="import" href="/bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="/bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
     <link rel="import" href="/bower_components/core-input/core-input.html">
+
   </head>
 
 <body>
-<h1>Welcome to DYA debate.</h1>
-<h2>Create A debate :</h2>
-<div id='debateLink'>Debate URL : <a href="{{debate}}" target="_blank"><h2>{{debate}}</h2></a></div>
+  <core-drawer-panel>
+  <div drawer>
+    <core-header-panel drawer>
+      <core-menu>
+        {{#each debates}}
+        <core-item item><a href='{{_id}}' target='blank'>{{title}}</a></core-item>
+        {{/each}}
 
-<input type="text" is="core-input" placeholder="Debate Question" aria-label="Debate"  id="debatetitle">
-<input type='text' class="full" id="agreeCol"/>
-<input type='text' class="full" id="neutralCol"/>
-<input type='text' class="full" id="disagreeCol"/>
-<input type="text" is="core-input" placeholder="Background Image URL" aria-label="Image" id="bgimg">
+      <core-item icon="favorite" label="Favorite" horizontal="" center="" layout="" class=""></core-item>
+      <core-item icon="account-box" label="Account" horizontal="" center="" layout=""></core-item>
 
-<button type="button" id="make">Make Debate</button>
+    </core-menu>
+    </core-header-panel>
+  </div>
+  <div main>
+    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+    <h1 style='margin:0 auto;text-align:center'>Welcome to DYA debate.</h1>
+    <div id='debateLink'>Debate URL : <a href="{{debate}}" target="_blank"><h2>{{debate}}</h2></a></div>
+
+    <input type="text" is="core-input" placeholder="Debate Question" aria-label="Debate"  id="debatetitle">
+    <div class='colSel'>
+    <input type='text' class="full" id="agreeCol" />
+    <input type='text' class="full" id="neutralCol"/>
+    <input type='text' class="full" id="disagreeCol"/>
+    </div>
+    <input type="text" is="core-input" placeholder="Background Image URL" aria-label="Image" id="bgimg">
+
+    <button type="button" id="make">Make Debate</button>
+
+  </div>
+</core-drawer-panel>
+
+
+
 </body>
 </template>
