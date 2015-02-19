@@ -15,8 +15,6 @@ Template.hello.rendered = function(){
   mypie = new Chartist.Pie('.ct-chart', data,{donut: true,showLabel:false,donutWidth:90});
 
   $('paper-tab').on('down', function(evt){
-    // alert('clicked');
-    // console.log(evt);
     $('.instructions').hide();
     $('.chart-container').show();
     Session.set('side',evt.currentTarget.id)

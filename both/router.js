@@ -7,6 +7,12 @@ this.route('/', {
     return templateData;
   }
    });
+
+   this.route('history', {
+       path: '/history',
+       template: 'history'
+      });
+
    this.route('debates', {
      path: '/:_id',
      template: 'debate',
