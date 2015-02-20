@@ -157,7 +157,8 @@ paper-tabs {
   #key{
     font-size:.6em;
   }
-  #title{
-    font-size:1.5em;
+  .title, #debatetitle, #bgimg{
+    font-size:1.2em;
+    max-width:90%;
   }
 }

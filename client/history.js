@@ -1,5 +1,3 @@
-// M7pymCp4EPZoKDeNL
-
 Template.history.rendered = function(){
 
 
@@ -10,7 +8,11 @@ Template.history.rendered = function(){
 
   Tracker.autorun(function () {
 
-  var hist = History.find({debate:'M7pymCp4EPZoKDeNL'},{sort: {DateTime:1}}).fetch();
+
+
+    console.log(Router.current().location.get().path);
+
+  var hist = History.find({debate:this.data},{sort: {DateTime:1}}).fetch();
   var series = [];
   var agree = [];
   var disagree =[];

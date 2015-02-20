@@ -8,9 +8,12 @@ this.route('/', {
   }
    });
 
-   this.route('history', {
-       path: '/history',
-       template: 'history'
+   this.route('analysis', {
+       path: '/analysis/:_id',
+       template: 'history',
+       data: function() {
+           return this.params._id;
+       }
       });
 
    this.route('debates', {
