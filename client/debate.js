@@ -11,40 +11,40 @@ var sum = function(a, b) { return a + b };
 
 Template.hello.rendered = function(){
 
-  Session.set('debate',Router.current().location.get().path.substring(1));
+  this.autorun(function () {
+    Session.set('debate',Router.current().location.get().path.substring(1));
 
-  $(".ct-chart").empty();
 
-  mypie = new Chartist.Pie('.ct-chart', data,{donut: true,showLabel:false,donutWidth:90});
+    mypie = new Chartist.Pie('.ct-chart', data,{donut: true,showLabel:false,donutWidth:90});
 
-  $('paper-tab').on('down', function(evt){
-    $('.instructions').hide();
-    $('.chart-container').show();
-    Session.set('side',evt.currentTarget.id)
-    Meteor.call('vote',Session.get('debate'),Session.get('usr'),evt.currentTarget.id);
-  });
+    $('paper-tab').on('down', function(evt){
+      $('.instructions').hide();
+      $('.chart-container').show();
+      Session.set('side',evt.currentTarget.id)
+      Meteor.call('vote',Session.get('debate'),Session.get('usr'),evt.currentTarget.id);
+    });
 
-  $('core-icon-button').on('click', function(evt){
-    var com = $('.the_item').val();
-    if(com != ''){
-         Meteor.call('comment',Session.get('debate'),Session.get('usr'),Session.get('side'),com);
-       }
-         $('.the_item').val('');
-  });
-
-  $('input').keypress(function(e){
-    if(e.charCode == 13){
+    $('core-icon-button').on('click', function(evt){
       var com = $('.the_item').val();
       if(com != ''){
            Meteor.call('comment',Session.get('debate'),Session.get('usr'),Session.get('side'),com);
          }
            $('.the_item').val('');
+    });
 
-    }
-  });
+    $('input').keypress(function(e){
+      if(e.charCode == 13){
+        var com = $('.the_item').val();
+        if(com != ''){
+             Meteor.call('comment',Session.get('debate'),Session.get('usr'),Session.get('side'),com);
+           }
+             $('.the_item').val('');
+
+      }
+    });
 
 
-  this.autorun(function () {
+
     if(Session.get('agree') == 0 && Session.get('neutral') == 0 && Session.get('disagree') ==0){
       var data = {
       series: [1, 1, 1]
@@ -65,6 +65,20 @@ Template.hello.rendered = function(){
   Template.hello.helpers({
     usr: function () {
       return Session.get('usr');
+    },
+    selected: function () {
+      try{
+      var side = Votes.findOne({debate:Session.get('debate'),usr:Session.get('usr')}).val;
+      switch (side){
+        case 'agree' :return 0;break;
+        case 'neutral' : return 1;break;
+        case 'disagree': return 2;break;
+        default : return null;
+      }
+    }catch(e){}
+
+
+
     },
     agree: function () {
       var ta = Votes.find({debate:Session.get('debate'),val:'agree'}).fetch().length;
