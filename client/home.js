@@ -4,7 +4,6 @@ Session.setDefault('neutralCol','#ffffff');
 Session.setDefault('disagreeCol','#354353');
 
 
-
   Template.home.helpers({
     debate: function(){
       return Session.get('debate');
@@ -14,16 +13,50 @@ Session.setDefault('disagreeCol','#354353');
 Template.home.rendered = function(){
 
   $('#make').on('click', function(evt){
+    if($('#debatetitle').val() != ''){
     Meteor.call('makeDebate'
     ,$('#debatetitle').val()
     ,Session.get('agreeCol')
     ,Session.get('neutralCol')
     ,Session.get('disagreeCol')
     ,$('#bgimg').val()
+    ,$('#did').val()
     ,function(error,data){
+      // console.log(data);
+      alert('Your Debate has been created.');
+      Router.go('/');
+      $('#debatetitle').val('');
+      $('#bgimg').val('');
       Session.set('debate',data);
     })
+  }else{
+    alert('First Set a Title');
+  }
   });
+
+  // $('#clear').on('click', function(evt){
+  //   alert('clear');
+  //   // Meteor.call('clearDebate'
+  //   // ,$('#did').val()
+  //   // ,false
+  //   // ,function(error,data){
+  //   //   alert('Your Debate has been Cleared.');
+  //   //   Router.go('/');
+  //   // })
+  // });
+
+
+  // $('#del').on('click', function(evt){
+  //   Meteor.call('clearDebate'
+  //   ,$('#did').val()
+  //   ,true
+  //   ,function(error,data){
+  //     alert('Your Debate has been Deleted.');
+  //     Router.go('/');
+  //   })
+  // });
+
+
 
   $(".full").spectrum({
     // color: "#ECC",

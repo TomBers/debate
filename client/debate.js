@@ -12,6 +12,9 @@ var sum = function(a, b) { return a + b };
 Template.hello.rendered = function(){
 
   Session.set('debate',Router.current().location.get().path.substring(1));
+
+  $(".ct-chart").empty();
+
   mypie = new Chartist.Pie('.ct-chart', data,{donut: true,showLabel:false,donutWidth:90});
 
   $('paper-tab').on('down', function(evt){
@@ -41,7 +44,7 @@ Template.hello.rendered = function(){
   });
 
 
-  Tracker.autorun(function () {
+  this.autorun(function () {
     if(Session.get('agree') == 0 && Session.get('neutral') == 0 && Session.get('disagree') ==0){
       var data = {
       series: [1, 1, 1]
