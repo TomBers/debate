@@ -1,5 +1,5 @@
 Session.setDefault('dbtID',0);
-
+Meteor.subscribe('history');
 
 
 Template.history.rendered = function(){

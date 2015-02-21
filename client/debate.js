@@ -1,3 +1,6 @@
+  Meteor.subscribe('votes');
+  Meteor.subscribe('comments');
+
   Session.setDefault('usr',Math.random());
   Session.setDefault('agree',0);
   Session.setDefault('neutral',0);

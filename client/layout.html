@@ -21,17 +21,17 @@
     <core-toolbar id="navheader"><span>Menu</span></core-toolbar>
     <core-menu>
       <core-item label="Home" horizontal="" center="" layout=""><a href="/"></a></core-item>
-      <core-submenu label="Debates" icon="menu" class="">
-        {{#each debates}}
-        <core-submenu label="{{title}}" icon="arrow-forward" class="">
-          <core-item label="Link" icon='link' horizontal="" center="" layout=""><a href="/{{_id}}" ></a></core-item>
-          <core-item label="Analyse" icon="trending-up" horizontal="" center="" layout=""><a href="/analysis/{{_id}}"></a></core-item>
-          <core-item label="Edit" icon="create" horizontal="" center="" layout=""><a href="/edit/{{_id}}"></a></core-item>
-          <core-item label="Clear Data" icon="remove-circle-outline" horizontal="" center="" layout=""><a href="/clear/{{_id}}"></a></core-item>
-          <core-item label="Delete Debate" icon="delete" horizontal="" center="" layout=""><a href="/del/{{_id}}"></a></core-item>
-        </core-submenu>
-    {{/each}}
+      <core-submenu label="Debates ({{no}})" icon="menu" class="">
+      {{#each debates}}
+      <core-submenu label="{{title}}" icon="arrow-forward" class="">
+        <core-item label="Link" icon='link' horizontal="" center="" layout=""><a href="/{{_id}}" ></a></core-item>
+        <core-item label="Analyse" icon="trending-up" horizontal="" center="" layout=""><a href="/analysis/{{_id}}"></a></core-item>
+        <core-item label="Edit" icon="create" horizontal="" center="" layout=""><a href="/edit/{{_id}}"></a></core-item>
+        <core-item label="Clear Data" icon="remove-circle-outline" horizontal="" center="" layout=""><a href="/clear/{{_id}}"></a></core-item>
+        <core-item label="Delete Debate" icon="delete" horizontal="" center="" layout=""><a href="/del/{{_id}}"></a></core-item>
       </core-submenu>
+  {{/each}}
+    </core-submenu>
       <core-submenu label="Favouties" icon="star" class="">
         {{#each debates}}
   <core-item label="{{title}}" horizontal="" center="" layout=""><a href="{{_id}}" ></a></core-item>
@@ -42,6 +42,7 @@
   </core-menu>
   </div>
   <div main style="overflow:auto">
+    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
     {{> yield}}
 
   </div>
