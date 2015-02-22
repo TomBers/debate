@@ -1,9 +1,9 @@
 Router.configure({
 layoutTemplate: 'layout',
 waitOn: function() { return Meteor.subscribe('debates'); },
-data: function() {
-  return {debates : Debates.find().fetch()}
-}
+// data: function() {
+//   return {debates : Debates.find().fetch()}
+// }
 });
 
 
@@ -21,6 +21,15 @@ Router.map(function() {
       return this.params._id;
     }
   });
+
+  this.route('admin', {
+    path: '/admin/',
+    template: 'admin',
+    data: function() {
+      return {debates : Debates.find().fetch()};
+    }
+  });
+
 
   this.route('edit', {
     path: '/edit/:_id',

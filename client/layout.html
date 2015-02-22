@@ -2,6 +2,9 @@
   <head>
     <title>DYA Debate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
     <link rel="import" href="/bower_components/core-toolbar/core-toolbar.html">
     <link rel="import" href="/bower_components/core-menu/core-menu.html">
     <link rel="import" href="/bower_components/core-menu/core-submenu.html">
@@ -13,6 +16,11 @@
     <link rel="import" href="/bower_components/core-list/core-list.html">
     <link rel="import" href="/bower_components/core-icons/core-icons.html">
 
+    <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+
+
+
   </head>
 
 <body>
@@ -21,24 +29,9 @@
     <core-toolbar id="navheader"><span>Menu</span></core-toolbar>
     <core-menu>
       <core-item label="Home" horizontal="" center="" layout=""><a href="/"></a></core-item>
-      <core-submenu label="Debates ({{no}})" icon="menu" class="">
-      {{#each debates}}
-      <core-submenu label="{{title}}" icon="arrow-forward" class="">
-        <core-item label="Link" icon='link' horizontal="" center="" layout=""><a href="/{{_id}}" ></a></core-item>
-        <core-item label="Analyse" icon="trending-up" horizontal="" center="" layout=""><a href="/analysis/{{_id}}"></a></core-item>
-        <core-item label="Edit" icon="create" horizontal="" center="" layout=""><a href="/edit/{{_id}}"></a></core-item>
-        <core-item label="Clear Data" icon="remove-circle-outline" horizontal="" center="" layout=""><a href="/clear/{{_id}}"></a></core-item>
-        <core-item label="Delete Debate" icon="delete" horizontal="" center="" layout=""><a href="/del/{{_id}}"></a></core-item>
-      </core-submenu>
-  {{/each}}
-    </core-submenu>
-      <core-submenu label="Favouties" icon="star" class="">
-        {{#each debates}}
-  <core-item label="{{title}}" horizontal="" center="" layout=""><a href="{{_id}}" ></a></core-item>
-    {{/each}}
-      </core-submenu>
-
-    <core-item icon="account-circle" label="Sign In/Out"></core-item>
+      <core-item label="My Debates ({{no}})" icon="menu" class=""><a href="/admin"></a></core-item>
+      <core-item label="Favourites" icon="favorite-outline" class=""><a href="/admin"></a></core-item>
+      <core-item icon="account-circle" label="Sign In/Out"></core-item>
   </core-menu>
   </div>
   <div main style="overflow:auto">

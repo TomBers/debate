@@ -10,8 +10,20 @@ html{
   font-color:black;
   background-color: #fff;
 }
-
-
+.adminTitle{
+  padding-left:2%;
+  padding-top:2%;
+  margin-bottom:0px;
+}
+.adminMenu{
+  padding-left:3%;
+  margin-top:0px;
+}
+.adminCard{
+  background-color:white;
+  margin-left:2%;
+  margin-right:2%;
+}
 #cmmtBox{
 
   max-width:650px;
