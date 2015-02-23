@@ -1,15 +1,14 @@
-<template name="home">
-  
-  <h1 style='margin:0 auto;text-align:center;margin-top:25px'>Welcome to DYA debate.</h1>
-
-  <input type="text" is="core-input" placeholder="Debate Question" aria-label="Debate"  id="debatetitle" value='{{title}}'>
-  <div class='colSel'>
-  <input type='text' class="full" id="agreeCol" value='{{ac}}'/>
-  <input type='text' class="full" id="neutralCol" value='{{nc}}'/>
-  <input type='text' class="full" id="disagreeCol" value='{{dc}}'/>
+<template name='home'>
+  <core-toolbar id="navheader"><span>Home</span></core-toolbar>
+  <div style="margin-left:10px">
+  <h1>Welcome to DoYouAgree Debate</h1>
+  <p style="font-size:1.2em">This is a <strong>protoype</strong> for a debate app.  The goal is to provide real time voting
+    and commenting, using mobile devices.  <br><br>All the data is collected by the system, so you can see what people thing,
+    and track when the changes occured.  <br>Collecting when every person votes (or changed their mind) you can see
+    map what arguments changed peoples minds.
+    <br><br>
+    It is full customisable and simple to use.<br>
+    </p>
+    <img style="width:50%;float:left;" src="/debate.jpg"><img style="width:50%;float:right;" src="/analysis.jpg">
   </div>
-  <input type="text" is="core-input" placeholder="Background Image URL" aria-label="Image" id="bgimg" value='{{url}}'>
-  <input type="hidden" id='did' value="{{_id}}">
-
-  <button type="button" id="make">Make Debate</button>
 </template>

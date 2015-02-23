@@ -1,5 +1,12 @@
 Session.setDefault('dbtID',0);
 Meteor.subscribe('history');
+Meteor.subscribe('debates');
+
+Template.history.helpers({
+  debate: function(){
+    return Debates.findOne({_id:Session.get('dbtID')});
+  }
+});
 
 
 Template.history.rendered = function(){
@@ -80,7 +87,7 @@ Template.history.rendered = function(){
   }
 
   function setDimensions(){
-    Session.set('wh',$(window).height() - 50);
-    Session.set('ww',$(window).width() - 50 );
+    Session.set('wh',$(window).height() - 150);
+    Session.set('ww',$(window).width() - 250 );
 
   }

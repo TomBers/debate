@@ -4,13 +4,7 @@ Session.setDefault('neutralCol','#ffffff');
 Session.setDefault('disagreeCol','#354353');
 
 
-  Template.home.helpers({
-    debate: function(){
-      return Session.get('debate');
-    }
-  });
-
-Template.home.rendered = function(){
+Template.create.rendered = function(){
 
   $('#make').on('click', function(evt){
     if($('#debatetitle').val() != ''){

@@ -28,7 +28,11 @@
     }
     html{
       {{#if url}}
-      background-image: url("{{url}}");
+      background: url("{{url}}") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
       {{/if}}
     }
     </style>

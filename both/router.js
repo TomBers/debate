@@ -14,6 +14,11 @@ Router.map(function() {
     template: 'home'
   });
 
+  this.route('/create', {
+    path: '/create',
+    template: 'create'
+  });
+
   this.route('analysis', {
     path: '/analysis/:_id',
     template: 'history',
@@ -26,14 +31,14 @@ Router.map(function() {
     path: '/admin/',
     template: 'admin',
     data: function() {
-      return {debates : Debates.find().fetch()};
+      return {debates : Debates.find({},{sort: {DateTime:-1}}).fetch()};
     }
   });
 
 
   this.route('edit', {
     path: '/edit/:_id',
-    template: 'home',
+    template: 'create',
     data: function() {
       return Debates.findOne({_id:this.params._id});
     }

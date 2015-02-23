@@ -15,10 +15,11 @@ Meteor.methods({
     Comments.insert({debate:debate,usr:usr,side:side,comment:comment,DateTime:dte});
   },
   makeDebate: function(title,ac,nc,dc,url,did){
+    var dte = new Date();
     if (did == ''){
-    return Debates.insert({title:title,ac:ac,nc:nc,dc:dc,url:url});
+    return Debates.insert({title:title,ac:ac,nc:nc,dc:dc,url:url,DateTime:dte});
   }else{
-    return Debates.update({_id:did},{_id:did,title:title,ac:ac,nc:nc,dc:dc,url:url},{upsert:false});
+    return Debates.update({_id:did},{_id:did,title:title,ac:ac,nc:nc,dc:dc,url:url,DateTime:dte},{upsert:false});
   }
 },
 clearDebate: function(debate,del){
