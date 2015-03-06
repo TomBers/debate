@@ -1,16 +1,19 @@
 /* CSS declarations go here */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+
 *{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+  font-family: 'Ubuntu Condensed', sans-serif;
    font-weight: 300;
 }
 html{
   /*background-color: #A2B8D3;*/
   /*background-image:url('background.jpg');*/
-  background: url('background.jpg') no-repeat center center fixed;
+  /*background: url('background.jpg') no-repeat center center fixed;
  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
- background-size: cover;
+ background-size: cover;*/
 }
 [drawer]{
   font-color:black;
@@ -74,6 +77,46 @@ html{
   stroke:#354353;
 }
 
+paper-slider{
+  display:block;
+  margin:0 auto;
+  text-align:center;
+  margin-top:40px;
+  /*border:1px solid red;*/
+  width:90%;
+  height:50px;
+  max-width:660px;
+
+}
+
+paper-slider::shadow .expand:not(.pin) > #sliderKnob > #sliderKnobInner{
+  background-color: red;
+  /*width:60px;*/
+  height:60px;
+}
+
+
+paper-slider::shadow #sliderBar{
+  height:10px;
+  /*background-color:transparent;*/
+}
+paper-slider::shadow #sliderKnob{
+  width:40px;
+  height:40px;
+}
+paper-slider::shadow #sliderBar::shadow #activeProgress {
+
+}
+
+
+paper-slider::shadow #sliderBar::shadow #progressContainer{
+
+}
+
+paper-slider::shadow #sliderKnobInner{
+  width:40px;
+  height:40px;
+}
 
 #graph{
   float:left;

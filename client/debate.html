@@ -26,7 +26,17 @@
     .ct-chart .ct-series.ct-series-c .ct-slice.ct-donut{
       stroke:{{dc}};
     }
-    html{
+    paper-slider::shadow .expand:not(.pin) > #sliderKnob > #sliderKnobInner{
+      background-color: {{dc}};
+    }
+    paper-slider::shadow #sliderBar::shadow #activeProgress {
+      background-color:{{ac}};
+    }
+    paper-slider::shadow #sliderKnobInner{
+      background-color:{{ac}};
+    }
+
+    /*html{
       {{#if url}}
       background: url("{{url}}") no-repeat center center fixed;
       -webkit-background-size: cover;
@@ -34,20 +44,34 @@
       -o-background-size: cover;
       background-size: cover;
       {{/if}}
-    }
+    }*/
     </style>
     {{title}}
   </paper-shadow>
 
+  <paper-slider min="0" max="2" value="{{sideNo}}"></paper-slider>
+  <h2 style="text-align:center">{{side}}</h2>
 
-  <paper-tabs selected="{{selected}}">
-    <paper-tab id='agree'><h2>Agree</h2></paper-tab>
-    <paper-tab id='neutral'><h2>Neutral</h2></paper-tab>
-    <paper-tab id='disagree'><h2>Disagree</h2></paper-tab>
+  {{#if showGraph}}
+  <style>
+  .instructions { display:none;}
+  .chart-container{ display:block;}
+  </style>
+  {{else}}
+  <style>
+  .instructions { display:block;}
+  .chart-container{ display:none;}
+  </style>
+  {{/if}}
+
+  <paper-tabs selected="{{sideNo}}">
+    <paper-tab id='Disagree'><h2>Disagree</h2></paper-tab>
+    <paper-tab id='Neutral'><h2>Neutral</h2></paper-tab>
+    <paper-tab id='Agree'><h2>Agree</h2></paper-tab>
   </paper-tabs>
 
   <div class='instructions'>
-    <h2>Click Above to register your opinion</h2><p>This can be changed at any time</p>
+    <h2>Use Slider to give your opinion</h2><p>This can be changed at any time</p>
   </div>
   <div class='chart-container'>
     <div id='graph'>
