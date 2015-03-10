@@ -9,6 +9,14 @@ window.addEventListener('polymer-ready', function(e) {
 
 });
 
+Template.layout.rendered = function(){
+$('core-item').on('click', function(evt){
+  document.querySelector('core-drawer-panel').togglePanel();
+
+});
+}
+
+
 
 Template.layout.helpers({
     debates : function(){
