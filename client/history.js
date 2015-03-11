@@ -29,12 +29,18 @@ Template.history.rendered = function(){
       var agree = [];
       var disagree =[];
       var neutral = [];
+      // console.log(hist.length);
+      var div = Math.floor(hist.length/15);
+      var cnt = 0;
       hist.forEach(function(dat){
         // console.log(dat);
-        series.push(dat.DateTime.toTimeString());
+        if((cnt % div) == 0){
+        series.push(dat.DateTime.toLocaleTimeString());
         agree.push(dat.agree);
         disagree.push(dat.disagree);
         neutral.push(dat.neutral);
+      }
+      cnt++;
       })
 
       var options = {
@@ -88,6 +94,6 @@ Template.history.rendered = function(){
 
   function setDimensions(){
     Session.set('wh',$(window).height() - 150);
-    Session.set('ww',$(window).width() - 250 );
+    Session.set('ww',$(window).width() - 50 );
 
   }
