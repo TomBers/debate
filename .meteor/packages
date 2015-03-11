@@ -11,3 +11,4 @@ ecwyne:polymer-elements
 jquery
 iron:router
 differential:vulcanize
+meteorhacks:fast-render

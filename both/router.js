@@ -1,6 +1,7 @@
 Router.configure({
 layoutTemplate: 'layout',
 waitOn: function() { return Meteor.subscribe('debates'); },
+  fastRender: true
 // data: function() {
 //   return {debates : Debates.find().fetch()}
 // }
